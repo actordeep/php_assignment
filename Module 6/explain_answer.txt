@@ -1,0 +1,9 @@
+The values of `$a` and `$b` will both be `'21'`. 
+
+Explanation: 
+1. Initially, `$a` is assigned the string value `'1'`. 
+2. Then, `$b` is assigned by reference to `$a`. This means that `$b` now refers to the same variable that `$a` refers to. Any changes made to `$b` will also affect `$a`. 
+3. Next, the string concatenation operation `"2$b"` appends the value of `$b` to the string `'2'`. Since `$b` currently holds the value `'1'`, this results in the string `'21'`. 
+4. Finally, this concatenated string `'21'` is assigned to both `$a` and `$b`. Since `$b` is just a reference to `$a`, assigning the concatenated string to `$b` also affects `$a`. 
+
+Therefore, after the execution of the code, both `$a` and `$b` will have the value `'21'`.
