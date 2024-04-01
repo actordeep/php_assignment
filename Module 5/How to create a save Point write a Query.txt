@@ -1,0 +1,32 @@
+In SQL, a savepoint is a marker that you can place within a transaction to momentarily save the transaction's state, enabling you to roll back to it at a later time if necessary. Savepoints are helpful for giving more precise control over rollback operations and for breaking up large transactions into smaller, easier-to-manage chunks.
+
+In SQL, a savepoint can be created by using the SAVEPOINT statement and the savepoint's name. The syntax is as follows:
+
+
+SAVEPOINT savepoint_name;
+
+Once you've created a savepoint, you can later rollback to that savepoint using the ROLLBACK TO statement followed by the name of the savepoint.
+
+Here's an example of creating a savepoint named sp1 within a transaction:
+
+BEGIN TRANSACTION;
+
+-- Perform some operations
+INSERT INTO Employees (EmployeeID, FirstName, LastName) VALUES (1, 'John', 'Doe');
+INSERT INTO Employees (EmployeeID, FirstName, LastName) VALUES (2, 'Jane', 'Smith');
+
+-- Create a savepoint
+SAVEPOINT sp1;
+
+-- More operations
+UPDATE Employees SET LastName = 'Johnson' WHERE EmployeeID = 1;
+DELETE FROM Employees WHERE EmployeeID = 2;
+
+-- Roll back to the savepoint
+ROLLBACK TO sp1;
+
+-- Now only the operations after the savepoint will be rolled back
+COMMIT;
+
+
+In this example, the operations performed after the SAVEPOINT sp1; statement will be rolled back when we use ROLLBACK TO sp1;. The COMMIT; statement at the end commits the transaction, applying any changes made before the savepoint.

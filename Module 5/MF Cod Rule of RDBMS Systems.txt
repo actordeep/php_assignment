@@ -1,0 +1,36 @@
+It appears like your query may be misunderstood or confusing. It doesn't seem as though the phrase "MF Cod Rule" is understood in relation to RDBMSs (Relational Database Management Systems).
+
+The design and operation of relational databases are governed by set rules and principles within the RDBMS domain. These guidelines are frequently referred to as "Codd's Rules," after the relational database model's creator, Edgar F. Codd. Codd's Rules, sometimes referred to as Codd's 12 Rules, outline the requirements that a system needs to meet in order to be classified as a genuine relational database management system.
+
+Usually, the regulations address things like data distribution, data independence, data modification, and data integrity. Among the fundamental ideas expressed in Codd's Rules are:
+
+Rule 0: The Foundation Rule states that a system may only be deemed relational if it uses just its relational capabilities to manage data.
+
+First Rule: Information Rule: Every piece of data in the database has to be logically organized into tables.
+
+
+Rule 2: Guaranteed Access Rule: Every item of data must be reachable via the use of the primary key, attribute value, and table name.
+
+Rule 3: Systematic Treatment of NULL Values: Missing data representations must be supported by the DBMS in a methodical manner.
+
+Rule 4: Relational Model-Based Dynamic Online Catalog The same relational model that is used to store and manage the data must also be used for the database schema.
+
+Rule 5: Detailed Information Sub-language Rule: A comprehensive language for defining, modifying, and accessing data must be supported by the DBMS.
+
+Rule 6: Examine Updates Rule: The system must be able to update any view that is theoretically updatable.
+
+
+Rule 7: High-Level Insert, Update, and Delete: High-level insert, update, and delete operations must be supported by the system.
+
+Rule 8: Physical Data Independence: Programs that use application software cannot be impacted by modifications to the physical storage architecture.
+
+Rule 9: Logical Data Independence: Modifications to the tables and columns that make up the logical structure shouldn't necessitate alterations to the application programs.
+
+Rule 10: Integrity Independence: Application programs should not retain integrity restrictions; instead, the catalog should.
+
+Rule 11: Distribution Independence: The application programs shouldn't be impacted by the database's sections being distributed to other locations.
+
+
+Rule12: Don't subvert Rule: A system must offer high-level access to the same data if it offers a low-level (record-at-a-time) interface.
+
+These guidelines serve as the basis for assessing whether a database management system upholds the relational model's tenets and guarantees the consistency, integrity, and usability of the data kept on it.

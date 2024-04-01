@@ -1,0 +1,50 @@
+SQL key constraints are restrictions that are applied to individual or groups of columns in a table to guarantee referential integrity, uniqueness, and data integrity. Key constraints come in many forms in SQL:
+
+
+Primary Key Constraint: Every entry in a table is uniquely identified by a primary key constraint. It guarantees that the values in the designated column or columns are distinct and not null.
+
+The purpose of a unique constraint is to guarantee that the values in a given column or columns are the same for every record in the table. A unique constraint, in contrast to a primary key constraint, permits null values.
+
+
+Foreign Key Constraint: By maintaining referential integrity, a foreign key constraint creates a connection between two tables. It verifies that the values in the designated column(s) of the child table (referencing table) are present in the column(s) that are referenced in the parent table (referencing table).
+
+
+Here's an example of how to define these key constraints in SQL:
+
+
+
+-- Create a table for storing employees
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,           -- Primary key constraint
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100) UNIQUE             -- Unique constraint
+);
+
+-- Create a table for storing departments
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(100)
+);
+
+-- Create a table for storing employee assignments to departments
+CREATE TABLE EmployeeDepartments (
+    EmployeeID INT,
+    DepartmentID INT,
+    CONSTRAINT FK_EmployeeID FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),     -- Foreign key constraint
+    CONSTRAINT FK_DepartmentID FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID),
+    CONSTRAINT PK_EmployeeDepartments PRIMARY KEY (EmployeeID, DepartmentID)                 -- Composite primary key constraint
+);
+
+
+
+
+In this instance:
+
+To guarantee that every employee has a distinct ID, the Employees table features a primary key constraint on the EmployeeID column.
+Each email address is guaranteed to be unique thanks to the unique constraint in the Employees table's Email column.
+
+The DepartmentID column in the Departments database is subject to a primary key restriction.
+The many-to-many relationship between employees and departments is represented by the EmployeeDepartments table, which acts as a junction table. The EmployeeID and DepartmentID columns in the Employees and Departments tables are referenced by its foreign key constraints (FK_EmployeeID and FK_DepartmentID), respectively. A composite primary key constraint (PK_EmployeeDepartments) is also present, guaranteeing uniqueness for combinations of EmployeeID and DepartmentID.
+
+These important limitations support the preservation of data integrity and uphold the database's table relationships.

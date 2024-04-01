@@ -1,0 +1,15 @@
+The process of normalization involves minimizing dependencies and redundancies in order to efficiently organize data in a database. In order to do this, a big table must be divided into smaller, linked tables and their linkages must be established. Normalization is primarily used to guarantee data consistency and integrity by getting rid of irregularities in data, including insertion, update, and deletion anomalies.
+
+There exist multiple normal forms, each denoting a distinct degree of normalization:
+
+First Normal Form (1NF): In 1NF, there are no recurring groupings of columns and each column in a table includes atomic (indivisible) values.
+
+A table is in Second Normal Form (2NF) if it is in First Normal Form (1NF) and every non-key attribute depends entirely on the main key for functionality. This implies that non-key attributes shouldn't rely on only a portion of the main key, or partial dependencies.
+
+
+Third Normal Form (3NF): If a table is in 2NF and every non-key attribute depends on the main key transitively, then it is in 3NF. This implies that non-key attributes shouldn't be dependent on one another in a transitive manner.
+
+
+Beyond 3NF, there are more normalization forms that address particular dependencies and further minimize redundancy in the database design, such as Boyce-Codd Normal Form (BCNF) and Fourth Normal Form (4NF).
+
+Normalization makes data management and querying simpler, lowers the amount of storage needed, and increases database efficiency. Achieving a balance between normalization and performance is crucial, since overly strict normalization can result in intricate queries and reduced query efficiency. As a result, the specific needs and features of the application and data model should serve as the foundation for normalization.

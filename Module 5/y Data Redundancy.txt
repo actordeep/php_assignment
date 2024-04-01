@@ -1,0 +1,28 @@
+When a piece of data is saved more than once in a database or across several databases in an organization's information systems, this is referred to as data redundancy. Put otherwise, redundant data refers to information that appears twice or more in a database.
+
+
+There are various causes of data redundancy, including:
+
+Data entering Errors: Inadvertent data duplication might result from human error during data entering procedures.
+
+Inadequate Database Design: Redundant data storage may arise from poor database design, which includes denormalized tables or a lack of normalization.
+
+
+Data Integration: If appropriate merging and deduplication procedures are not followed, duplicate records may result from the integration of data from several sources or systems into a single database.
+
+Data Replication: For redundancy and fault tolerance, copies of the same data may be kept on several nodes or servers in distributed databases or systems using replication techniques.
+
+Historical Data: Preserving historical data or keeping audit trails may eventually cause redundant data to be stored.
+
+Application Requirements: In order to optimize performance or handle particular query patterns, certain applications might need duplicate data storage.
+
+Data redundancy can negatively affect an organization's information management and database procedures in a number of ways, including:
+
+Wastage of Storage Space: Extraneous storage space is taken up by redundant data, which raises storage expenses.
+Data Inconsistency: Inaccuracies and problems with data integrity can result from contradicting or inconsistent information found in duplicate records.
+
+Update anomalies and data inconsistencies might arise from changing data in one place while leaving duplicates unaltered.
+Complexity: Maintaining redundant data makes database querying, reporting, and maintenance procedures more difficult.
+Security Risks: The surface area for security flaws and data breaches is increased by redundant data.
+
+Database managers frequently use strategies like normalization, which divides data into distinct tables and creates linkages between them to reduce duplication and guarantee data integrity, to reduce data redundancy. Furthermore, routine data cleansing procedures and data deduplication techniques can assist in finding and eliminating redundant data from databases.

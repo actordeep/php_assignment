@@ -1,0 +1,48 @@
+A trigger is a unique kind of stored procedure in SQL that is set to run automatically in response to specific database events or modifications to the data. Triggers are defined to carry out tasks like data validation, data integrity maintenance, logging changes, and business rule enforcement.
+
+
+The two primary categories of triggers are distinguished by the time at which they are triggered:
+
+Prior to Triggers (PRIOR TO INSERT, UPDATE, OR DELETE): These triggers go off prior to the insert, update, or delete event that is defined. They are frequently employed to make changes to data before it is altered or to implement data validation criteria.
+
+
+Triggers that fire after a specific event has occurred are called "after" triggers (AFTER INSERT, AFTER UPDATE, and AFTER DELETE). Usually, they are utilized to carry out tasks like recording modifications or updating relevant information following the insertion, modification, or deletion of a record.
+
+The construct TRIGGER statement, the trigger name, the timing (BEFORE or AFTER), the event (INSERT, UPDATE, DELETE), and the table or view that the trigger should be applied to are the steps required to construct a trigger in SQL. Additionally, you designate the SQL statements that should be performed in the event that the trigger fires, or the trigger action.
+
+Here's the general syntax for creating a trigger:
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+[FOR EACH ROW]  -- Optional, specifies that the trigger should be fired for each affected row
+BEGIN
+    -- Trigger action statements
+END;
+
+
+Here's an example of creating a simple trigger in SQL:
+
+CREATE TRIGGER audit_trigger
+AFTER INSERT OR UPDATE OR DELETE
+ON Employees
+FOR EACH ROW
+BEGIN
+    -- Log the change
+    INSERT INTO AuditLog (TableName, ActionType, EmployeeID, ChangedDate)
+    VALUES ('Employees', 
+            CASE 
+                WHEN NEW.EmployeeID IS NOT NULL THEN 'INSERT'
+                WHEN OLD.EmployeeID IS NOT NULL THEN 'UPDATE'
+                ELSE 'DELETE'
+            END,
+            COALESCE(NEW.EmployeeID, OLD.EmployeeID),
+            CURRENT_TIMESTAMP);
+END;
+
+
+In this example:
+
+The trigger named audit_trigger is defined to execute AFTER INSERT, UPDATE, or DELETE operations on the Employees table.
+The FOR EACH ROW clause specifies that the trigger should be fired for each affected row.
+Within the trigger body (between BEGIN and END), an action is performed to log the change into an AuditLog table, recording details such as the table name, action type (INSERT, UPDATE, DELETE), the affected EmployeeID, and the timestamp of the change.

@@ -1,0 +1,18 @@
+A DML (Data Manipulation Language) compiler is a part of a database management system (DBMS) that processes and executes commands pertaining to data manipulation operations in SQL (Structured Query Language). Data kept in database tables can be retrieved, updated, deleted, and inserted using DML procedures.
+
+
+Among a DML compiler's main duties are:
+
+Parsing: To comprehend the syntax and semantics of the DML statements submitted by users or applications, the DML compiler parses the statements. It dissects the claims into coherent parts and confirms that they are true.
+
+Validation: Following the parsing of the DML statements, the compiler verifies that they adhere to the constraints and guidelines established by the database schema and the DBMS. This entails examining data types, object names, integrity restrictions, and syntax problems.
+
+Query Optimization: To increase the effectiveness of data retrieval, the DML compiler may carry out query optimization for SELECT statements (queries). This entails looking at the query execution plan and figuring out how to use strategies like join optimization, index selection, and query rewriting to access and get data from the underlying database tables as quickly and efficiently as possible.
+
+Execution: The DML compiler runs the DML statements to carry out the desired data manipulation operations after they have been verified and optimized. This could entail adding new records to tables, updating current records, removing records from tables, or retrieving data based on predetermined criteria.
+
+Management of Transactions: DML statements usually function inside a transaction. To guarantee data consistency and integrity, the DML compiler controls transactional features like durability, atomicity, and transaction isolation.
+
+Concurrency Control: To manage concurrent DML operations from numerous users or sessions, the DML compiler may incorporate concurrency control methods in multi-user database settings. By doing this, conflicts and anomalous data are avoided and DML operations are carried out in a consistent and segregated manner.
+
+All things considered, the DML compiler is essential to allowing users and programs to work with data that is kept in database tables. It guarantees that data manipulation operations are carried out precisely, quickly, and with consistency and integrity.

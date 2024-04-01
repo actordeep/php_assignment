@@ -1,0 +1,23 @@
+DBMS (Database Management System) and RDBMS (Relational Database Management System) are both software systems used to manage databases, but they differ in their approach and capabilities:
+
+Definition:
+
+DBMS: A DBMS is a software system that provides an interface to interact with databases, allowing users to store, retrieve, update, and manage data efficiently.
+RDBMS: An RDBMS is a type of DBMS that manages data according to the relational model, where data is organized into tables with rows and columns, and relationships between tables are established using keys.
+Data Model:
+
+DBMS: DBMS can support various data models, including hierarchical, network, and object-oriented models. It may or may not enforce relationships between data elements.
+RDBMS: RDBMS strictly follows the relational model, where data is organized into tables, and relationships between tables are established using primary and foreign keys.
+Data Integrity:
+
+DBMS: DBMS may or may not enforce data integrity constraints, such as uniqueness, referential integrity, and domain constraints.
+RDBMS: RDBMS enforces data integrity constraints rigorously, ensuring data accuracy and consistency through mechanisms like primary key constraints, foreign key constraints, and data types.
+Query Language:
+
+DBMS: DBMS may support various query languages, including SQL (Structured Query Language), but its capabilities in handling complex relational operations may be limited.
+RDBMS: RDBMS fully supports SQL for querying and manipulating data, allowing for complex operations like joins, subqueries, and aggregate functions.
+Scalability and Performance:
+
+DBMS: DBMS may or may not be optimized for scalability and performance in handling large volumes of data and high transaction loads.
+RDBMS: RDBMS is typically optimized for scalability and performance, with features like indexing, query optimization, and transaction management to handle large-scale data operations efficiently.
+In summary, while both DBMS and RDBMS are used for managing databases, RDBMS specifically adheres to the relational model and enforces strict data integrity constraints using SQL, making it suitable for applications that require structured, relational data management.
