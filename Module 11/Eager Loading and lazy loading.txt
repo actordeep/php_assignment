@@ -1,0 +1,35 @@
+Q. What is Eager Loading and lazy loading? 
+
+Eager loading and lazy loading are two approaches used in ORM (Object-Relational Mapping) frameworks like Laravel's Eloquent to retrieve and load related data from the database.
+
+1. Eager Loading: 
+> Eager loading is a technique where you retrieve all related data along with the main data in a single database query. 
+> It's beneficial when you know in advance that you will need the related data, as it reduces the number of database queries required. 
+> In Eloquent, you can eager load relationships using the with method. 
+
+For example:
+
+$posts = Post::with('comments')->get();
+
+> This retrieves all posts along with their comments in a single query, rather than retrieving posts first and then querying for comments for each post separately.
+
+2. lazy loading:
+>Lazy loading is a technique where related data is only loaded from the database when it's explicitly accessed. 
+>It's useful when you're not sure whether you'll need the related data, as it avoids unnecessary database queries. 
+>In Eloquent, relationships are typically set up to lazily load by default. 
+
+For example:
+
+$post = Post::find(1);
+$comments = $post->comments; // This triggers a query to load comments for the post
+
+> Here, comments are only loaded when $post->comments is accessed.
+
+
+************************************
+
+>> Comparison: 
+
+* Eager loading reduces the number of database queries but may fetch more data than necessary. 
+* Lazy loading loads related data on-demand, which can be more efficient if you don't always need the related data. 
+* Eager loading is suitable for scenarios where you know you'll need the related data, while lazy loading is better when the need for related data is uncertain.

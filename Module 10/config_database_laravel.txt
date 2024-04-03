@@ -1,0 +1,33 @@
+Environment Configuration-
+
+
+Instead of hardcoding database connection details directly into config/database.php,
+you can also use environment variables. Laravel supports this out of the box. 
+ 
+> Create a .env file in the root directory of your Laravel application if it doesn't already exist.
+
+> Add your database connection details to the .env file using the format 
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3307
+DB_DATABASE=database_name
+DB_USERNAME=root
+DB_PASSWORD=
+
+***********************************************
+
+> Inside the connections array, you'll find configurations for different database connections. 
+The default connection is usually set to mysql. 
+>Set the database connection parameters according to your database setup. 
+
+>These parameters typically include: 
+* driver: The database driver (e.g., mysql, sqlite, pgsql). 
+* host: The host of your database server (e.g., localhost). 
+* port: The port your database server is running on (e.g., 3306 for MySQL). 
+* database: The name of the database you want to connect to. 
+* username: The username for the database connection. 
+* password: The password for the database connection. 
+* charset: The character set used by the database. 
+* collation: The collation used by the database. 
+* prefix: The prefix applied to table names (optional).

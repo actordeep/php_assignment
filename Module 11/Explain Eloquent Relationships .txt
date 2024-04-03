@@ -1,0 +1,24 @@
+Q. Explain - Eloquent Relationships.
+
+Eloquent Relationships in Laravel allow you to define connections between different database tables, 
+making it easy to work with related data. 
+
+1. One-to-One Relationship: 
+Example: A user has one profile. 
+In Eloquent, you define this relationship by adding a method to the User model called profile that returns hasOne(Profile::class). 
+
+2. One-to-Many Relationship: 
+Example: A user has many posts. 
+In Eloquent, you define this relationship by adding a method to the User model called posts that returns hasMany(Post::class). 
+
+3. Many-to-Many Relationship: 
+Example: A user belongs to many roles, and a role can belong to many users. 
+In Eloquent, you define this relationship by adding a method to the User model called roles that returns belongsToMany(Role::class). 
+
+4. Has-Many-Through Relationship: 
+Example: A country has many users through cities. 
+In Eloquent, you define this relationship by adding a method to the Country model called users that returns hasManyThrough(User::class, City::class). 
+
+5. Polymorphic Relationship: 
+Example: Comments can belong to posts or videos. 
+In Eloquent, you define this relationship by adding methods to the Comment model called commentable and comments that return morphTo() and morphMany(Comment::class, 'commentable'), respectively.
